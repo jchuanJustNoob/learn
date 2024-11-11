@@ -1,0 +1,23 @@
+组包
+（1）定义json类型指针变量
+cJSON *json = NULL;
+（2）创建json对象
+json = cJSON_CreateObject();
+（3）添加“键-值”对
+cJSON_AddItemToObject(json,键，值）
+（4）将json对象转为标准的c语言字符串
+ dest = cJSON_Print(json);
+（5）释放空间
+free(dest);
+cJSON_Delete(json);
+
+
+解包
+（1）获取json字符串
+（2）创建json对象
+json = cJSON_Parse(buf);
+（3）由键获取值
+cJSON_GetObjectItem
+（4）组织为c结构体数据
+（5）删除json对象
+cJSON_Delete(json);
